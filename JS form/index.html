@@ -1,0 +1,39 @@
+<!DOCTYPE html>   
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krijo formularin tend </title>
+    <link rel="stylesheet" href="css/style.css"> <!--linku to css file-->
+  
+</head>
+<body>
+
+<div class="container">
+    <h1>Guide to your 1st FORM</h1>
+    <!-- Checkbox për zgjedhjen e fushave -->
+    <label><input type="checkbox" id="text"> Text</label>
+    <label><input type="checkbox" id="textarea"> Textarea</label>
+    <label><input type="checkbox" id="number"> Number</label>
+    <label><input type="checkbox" id="date"> Date</label>
+    <label><input type="checkbox" id="email"> Email</label>
+    
+    <!-- Butoni Gjenero form per te krijuar form sipas deshires -->
+    <button id="generate-form-button" onclick="createForm()">Generate Form</button>
+    <!-- Butoni sjell form ne gjendjen fillestare-->
+    <button id="bring-back-button" onclick="resetToBeginning()">Bring Me Back to Beginning</button>
+
+    <!-- error message te lajmeron nqs nuk ke plotesuar te gjitha fushat e form qe krijove -->
+    <div id="error-message">Please fill all required fields!</div>
+   
+    <div id="form-container"></div>
+    
+    <div id="result"></div>
+</div>
+
+<script src="script/script.js"></script> <!-- Link to  JS file -->
+    
+
+</body>
+</html>
