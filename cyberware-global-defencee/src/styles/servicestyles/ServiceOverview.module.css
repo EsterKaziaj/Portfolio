@@ -1,0 +1,50 @@
+/* styles/servicestyles/ServiceOverview.module.css */
+.overviewSection {
+    background: #1E1E1E;
+    padding: 60px 120px;
+    color: white;
+  }
+  
+  .overviewContent {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .orangeTitle {
+    color: #FF6B00;
+    font-size: 24px;
+    margin: 40px 0 20px 0;
+  }
+  
+  .overviewContent p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #CCCCCC;
+  }
+  
+  .overviewContent ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .overviewContent li {
+    color: #CCCCCC;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .overviewContent li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: #FF6B00;
+    border-radius: 50%;
+  }

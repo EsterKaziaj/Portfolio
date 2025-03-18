@@ -1,0 +1,76 @@
+/* styles/servicestyles/KeyFeatures.module.css */
+.features {
+    background: #1E1E1E;
+    padding: 60px 0;
+  }
+  
+  .featuresContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .featuresContainer h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .highlight {
+    color: #FF6B00;
+  }
+  
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .featureCard {
+    background: white;
+    padding: 25px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .featureCard h3 {
+    color: #FF6B00;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .featureCard p {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 1024px) {
+    .cardsContainer {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cardsContainer {
+      grid-template-columns: 1fr;
+    }
+  
+    .featuresContainer {
+      padding: 0 15px;
+    }
+  
+    .featureCard {
+      padding: 20px;
+    }
+  }

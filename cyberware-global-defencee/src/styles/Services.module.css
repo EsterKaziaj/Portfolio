@@ -1,0 +1,60 @@
+.services {
+  text-align: center;
+  padding: 100px 20px;
+  background: #0b0c10;
+  color: white;
+}
+
+.serviceGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.serviceCard {
+  background: #1f2833;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+}
+
+.serviceCard img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+/* Responsive Design: Stacking Items Below Each Other */
+@media (max-width: 1024px) {
+  .serviceGrid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .serviceCard {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .serviceCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .serviceCard {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .serviceCard img {
+    width: 40px;
+  }
+}

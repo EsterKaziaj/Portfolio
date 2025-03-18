@@ -1,0 +1,205 @@
+.partnershipPage {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 40px 0;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.orange {
+  color: #ff6b00;
+}
+
+.header p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Partnership Section */
+.partnershipSection {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.partnershipCard {
+  display: flex;
+  align-items: center;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.partnershipCardTop {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.imageGrid {
+  display: flex;
+  gap: 15px;
+}
+
+.imageGrid img {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.fullImage {
+  width: 50%;
+}
+
+.textBlock {
+  padding: 20px;
+}
+
+.darkBackground {
+  background: #2a2a2a;
+  color: white;
+}
+
+/* Testimonials */
+.testimonialsSection {
+  background: #2a2a2a;
+  padding: 40px;
+  display: flex;
+}
+
+.testimonialMain {
+  display: flex;
+  align-items: center;
+}
+
+.testimonialText {
+  margin-left: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+/* Responsive Styling for Different Screen Sizes */
+@media (max-width: 1024px) {
+  .partnershipSection {
+    max-width: 90%; /* Reduce width for better fit */
+  }
+
+  .partnershipCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageGrid {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .imageGrid img,
+  .fullImage {
+    width: 100%;
+  }
+
+  .textBlock {
+    padding: 15px;
+  }
+
+  .testimonialsSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonialMain {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonialText {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .navigation {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .partnershipSection {
+    max-width: 95%;
+  }
+
+  .partnershipCard {
+    padding: 15px;
+  }
+
+  .textBlock {
+    font-size: 14px;
+  }
+
+  .testimonialsSection {
+    padding: 30px;
+  }
+
+  .testimonialText {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 0.8rem;
+  }
+
+  .partnershipSection {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .partnershipCard {
+    padding: 10px;
+  }
+
+  .textBlock {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .testimonialsSection {
+    padding: 20px;
+  }
+
+  .testimonialText {
+    font-size: 13px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

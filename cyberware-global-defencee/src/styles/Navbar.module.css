@@ -1,0 +1,235 @@
+/* Navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #1c1c1c;
+  padding: 15px 0;
+  position: relative;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+}
+
+.navItem:hover {
+  color: #ff6600;
+}
+
+/* Dropdown Styling */
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.dropdown.active {
+  color: #ff6600;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.3s ease;
+}
+
+.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* Contact Button */
+.contactButton {
+  border: 2px solid #ff6600;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+}
+
+.contactButton:hover {
+  background: #ff6600;
+  color: white;
+}
+
+/* ServicesDropdown.module.css */
+.dropdownContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 15px;
+  animation: fadeIn 0.3s ease;
+}
+
+.arrowContainer {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.servicesGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.serviceIcon {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 15px;
+}
+
+.serviceCard h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.serviceCard p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.serviceCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.serviceCard li {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.exploreButton {
+  margin-top: auto;
+  background: none;
+  border: none;
+  color: #ff6600;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.exploreButton span {
+  color: #333;
+}
+
+.bottomLine {
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive Navigation for All Screen Sizes */
+@media (max-width: 1024px) {
+  .navList {
+    gap: 15px; /* Reduce spacing between menu items */
+  }
+
+  .navItem {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .contactButton {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+/* For Tablets (Below 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .navList {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .navItem {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .contactButton {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/* For Mobile Screens (Below 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .navItem {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .contactButton {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}

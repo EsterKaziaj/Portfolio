@@ -1,0 +1,150 @@
+.whoWeAreSection {
+  background-color: #1e1e1e;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 4px solid #ff6700;
+  border-bottom: 4px solid #ff6700;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff6700;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid #ff6700;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.icon {
+  width: 35px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.statText p {
+  margin: 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.highlightedText {
+  color: #ff6700;
+  font-weight: bold;
+  font-size: 18px;
+}
+/* Responsive Design: Stacking & Scaling */
+@media (max-width: 1024px) {
+  .statsContainer {
+    flex-wrap: wrap; /* Allow wrapping to fit smaller screens */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .statCard {
+    padding: 8px 16px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsContainer {
+    flex-direction: column; /* Stack stats one below the other */
+    align-items: center;
+    gap: 12px;
+  }
+
+  .statCard {
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .icon {
+    width: 30px;
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+
+  .statText p {
+    font-size: 14px;
+  }
+
+  .highlightedText {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .description {
+    font-size: 15px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .whoWeAreSection {
+    padding: 40px 15px;
+  }
+
+  .statsContainer {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .statCard {
+    width: 90%;
+    padding: 8px;
+  }
+
+  .icon {
+    width: 28px;
+  }
+
+  .statText p {
+    font-size: 13px;
+  }
+
+  .highlightedText {
+    font-size: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+    max-width: 100%;
+  }
+}

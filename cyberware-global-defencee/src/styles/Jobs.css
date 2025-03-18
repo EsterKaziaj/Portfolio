@@ -1,0 +1,127 @@
+.jobs-container {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header h1 .highlight {
+    color: #FF6F00;
+}
+
+.header p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-select {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 150px;
+    position: relative;
+    cursor: pointer;
+}
+
+.filter-select .arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #777;
+}
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 100px;
+}
+
+.job-card {
+    background-color: #2A2A2A;
+    color: white;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.job-date {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.job-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.job-title .highlight {
+    color: #FF6F00;
+}
+
+.job-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.job-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.job-option {
+    padding: 8px 20px;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.apply-button {
+    background-color: #FF6F00;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+}

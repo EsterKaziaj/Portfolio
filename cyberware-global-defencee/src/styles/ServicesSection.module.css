@@ -1,0 +1,152 @@
+/* Services Section */
+.servicesSection {
+  background: #1e1e1e;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff6600;
+  margin-bottom: 40px;
+}
+
+/* Services Grid */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Service Card */
+.serviceCard {
+  background: #131313;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+
+/* Service Icon */
+.serviceIcon {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+/* Service Title */
+.serviceTitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Service Text */
+.serviceText {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #c4c4c4;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Service Button */
+.serviceButton {
+  display: inline-block;
+  background: #ff6600;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.serviceButton:hover {
+  background: #e55b00;
+}
+
+/* Responsive Design: Stacking & Scaling */
+@media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .serviceCard {
+    padding: 25px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(1, 1fr); /* Stack One Below Each Other */
+    gap: 15px;
+  }
+
+  .serviceCard {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .serviceIcon {
+    width: 40px;
+  }
+
+  .serviceTitle {
+    font-size: 18px;
+  }
+
+  .serviceText {
+    font-size: 14px;
+  }
+
+  .serviceButton {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serviceCard {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .serviceIcon {
+    width: 35px;
+  }
+
+  .serviceTitle {
+    font-size: 16px;
+  }
+
+  .serviceText {
+    font-size: 13px;
+  }
+
+  .serviceButton {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+}

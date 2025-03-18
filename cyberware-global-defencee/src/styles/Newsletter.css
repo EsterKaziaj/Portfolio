@@ -1,0 +1,522 @@
+:root {
+  --primary-orange: #ff6f00;
+  --dark-gray: #2a2a2a;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --text-dark: #333;
+  --text-light: #777;
+  --peach-bg: #ffebda;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.cybersecurity-blog {
+  width: 100%;
+  background-color: white;
+  color: var(--dark-gray);
+}
+
+/* Hero Banner */
+.hero-banner {
+  background-image: url("C:\Users\Lenovo\Desktop\cyberware-global-defencee\src\assets\Newsletter\pexels-tima-miroshnichenko-5380664 1.png");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 40px;
+  position: relative;
+  height: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: right;
+  color: black;
+  position: relative;
+  z-index: 2;
+}
+
+.small-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.main-heading {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.post-meta {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.post-meta .date {
+  margin-right: 15px;
+}
+
+.author {
+  color: var(--primary-orange);
+}
+
+/* Content Container */
+.content-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  padding-right: 20px;
+  border-right: 1px solid var(--medium-gray);
+}
+
+.sidebar-heading {
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-orange);
+  margin-bottom: 20px;
+}
+
+.news-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  border-bottom: 1px solid var(--medium-gray);
+  padding-bottom: 20px;
+}
+
+.news-image {
+  margin-bottom: 10px;
+}
+
+.orange-square {
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-orange);
+}
+
+.news-date {
+  font-size: 12px;
+  color: var(--primary-orange);
+  margin-bottom: 5px;
+}
+
+.news-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.news-content {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.read-more-btn {
+  background-color: var(--primary-orange);
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.contributor-section {
+  margin-top: 40px;
+}
+
+.contributor-heading {
+  font-size: 20px;
+  color: var(--primary-orange);
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--text-dark);
+}
+
+.contributor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px;
+  border: none;
+  background-color: var(--medium-gray);
+}
+
+.form-textarea {
+  height: 150px;
+  resize: none;
+}
+
+.submit-btn {
+  background-color: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  width: 70%;
+  padding-left: 20px;
+}
+
+.content-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.trend-item,
+.case-study,
+.strategy-item {
+  margin-bottom: 20px;
+}
+
+.trend-title,
+.case-title,
+.strategy-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--primary-orange);
+  font-weight: normal;
+}
+
+.content-divider {
+  height: 2px;
+  background-color: var(--primary-orange);
+  margin: 40px 0;
+}
+
+/* Footer News Section */
+.footer-news {
+  background-color: var(--dark-gray);
+  padding: 40px 20px;
+  color: white;
+}
+
+.footer-news-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.footer-news-item {
+  background-color: var(--peach-bg);
+  color: var(--text-dark);
+  padding: 20px;
+  flex: 1;
+}
+
+.read-more-btn-footer {
+  background-color: var(--primary-orange);
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Pagination */
+.pagination-controls {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 20px auto 0;
+  align-items: flex-end;
+}
+
+.pagination-bar {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.pagination-progress {
+  width: 15%;
+  height: 100%;
+  background-color: var(--primary-orange);
+  position: absolute;
+  left: 15%;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.prev-btn,
+.next-btn {
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-orange);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  padding: 40px 20px;
+}
+
+.newsletter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsletter-content {
+  width: 60%;
+}
+
+.newsletter-heading {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.orange-text {
+  color: var(--primary-orange);
+}
+
+.newsletter-form {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-input {
+  padding: 10px;
+  border: 1px solid var(--medium-gray);
+  border-right: none;
+  flex: 1;
+}
+
+.newsletter-btn {
+  background-color: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .content-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .sidebar,
+  .main-content {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  .footer-news-container {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .newsletter-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .newsletter-content,
+  .newsletter-form {
+    width: 100%;
+  }
+
+  /* Pagination */
+  .pagination-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pagination-bar {
+    width: 80%; /* Smaller width for better visibility */
+  }
+
+  .pagination-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 40px 20px;
+    height: 200px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .small-heading {
+    font-size: 16px;
+  }
+
+  .main-heading {
+    font-size: 28px;
+  }
+
+  .post-meta {
+    font-size: 12px;
+  }
+
+  .footer-news {
+    padding: 30px 15px;
+  }
+
+  .news-title {
+    font-size: 14px;
+  }
+
+  .read-more-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .content-container {
+    padding: 10px;
+  }
+
+  .pagination-controls {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pagination-bar {
+    width: 90%;
+  }
+
+  .pagination-buttons {
+    flex-direction: column;
+  }
+
+  .prev-btn,
+  .next-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 180px;
+    padding: 30px 10px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .main-heading {
+    font-size: 24px;
+  }
+
+  .post-meta {
+    font-size: 10px;
+  }
+
+  .sidebar-heading,
+  .contributor-heading {
+    font-size: 18px;
+  }
+
+  .news-title {
+    font-size: 12px;
+  }
+
+  .news-content {
+    font-size: 12px;
+  }
+
+  .read-more-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .pagination-controls {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .pagination-bar {
+    width: 100%;
+    height: 3px;
+  }
+
+  .pagination-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .newsletter-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .newsletter-heading {
+    font-size: 20px;
+  }
+
+  .newsletter-input {
+    padding: 8px;
+  }
+
+  .newsletter-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
