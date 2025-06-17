@@ -1,0 +1,348 @@
+﻿@model IEnumerable<Evente.Models.Event>
+@{
+    ViewData["Title"] = "Events";
+}
+
+<!-- Hero Section with Navigation -->
+<div class="events-hero-section">
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-ticket-alt"></i> Eventick
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/Events" class="active">Events</a>
+                <a href="/#about">About Us</a>
+                <a href="/#footer">Contact</a>
+                <div class="auth-buttons">
+                    <a href="/Identity/Account/Login" class="login-btn">Login</a>
+                    <a href="/Identity/Account/Register" class="signup-btn">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="events-hero-content">
+            <h1>Discover Events</h1>
+            <p>Find amazing events happening around you</p>
+        </div>
+    </div>
+</div>
+
+<!-- Events Section -->
+<section class="events-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Upcoming Events</h2>
+            <div class="filter-group">
+                <div class="custom-select">
+                    <select id="weekdays">
+                        <option value="">All Days</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="custom-select">
+                    <select id="eventType">
+                        <option value="">Event Type</option>
+                        <option value="party">Party</option>
+                        <option value="festival">Festival</option>
+                        <option value="concert">Concert</option>
+                        <option value="cinema">Cinema</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="custom-select">
+                    <select id="category">
+                        <option value="">Any Category</option>
+                        <option value="afro">Afro House</option>
+                        <option value="techno">Techno</option>
+                        <option value="albanian">Albanian Music</option>
+                        <option value="pop">Pop</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="events-grid">
+            <!-- Event 1: Keinemusik Tirana -->
+            <div class="event-card" data-weekday="friday" data-event-type="party" data-category="afro">
+                <img src="~/images/keinemusik.jpg" alt="Keinemusik Tirana" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Keinemusik Tirana</h3>
+                        <span class="price">80€</span>
+                    </div>
+                    <p>Experience the unique sound of Keinemusik in Tirana.</p>
+                    <div class="event-info">
+                        <p>May 31, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 101 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 2: Colorday Festival -->
+            <div class="event-card" data-weekday="saturday" data-event-type="festival" data-category="other">
+                <img src="~/images/colorday.jpg" alt="Colorday Festival" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Colorday Festival</h3>
+                        <span class="price">70€</span>
+                    </div>
+                    <p>Experience the most colorful festival of the year.</p>
+                    <div class="event-info">
+                        <p>June 14, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 102 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+            <!-- Event 3: Alpha Show -->
+            <div class="event-card" data-weekday="friday" data-event-type="concert" data-category="pop">
+                <img src="~/images/alpha-show.jpg" alt="Alpha Show" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Alpha Show</h3>
+                        <span class="price">45€</span>
+                    </div>
+                    <p>The ultimate Albanian music experience.</p>
+                    <div class="event-info">
+                        <p>August 12, 2025</p>
+                        <p>Durres, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 103 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 4: Alban Skenderaj -->
+            <div class="event-card" data-weekday="thursday" data-event-type="concert" data-category="albanian">
+                <img src="~/images/alban-skenderaj.jpg" alt="Alban Skenderaj" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Alban Skenderaj</h3>
+                        <span class="price">60€</span>
+                    </div>
+                    <p>Join Alban Skenderaj for a magical night of Albanian music.</p>
+                    <div class="event-info">
+                        <p>July 20, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 104 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 5: Open Air Tirana -->
+            <div class="event-card" data-weekday="wednesday" data-event-type="cinema" data-category="other">
+                <img src="~/images/open-air.jpg" alt="Open Air Tirana" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Open Air Tirana</h3>
+                        <span class="price">15€</span>
+                    </div>
+                    <p>Outdoor cinema experience under the stars.</p>
+                    <div class="event-info">
+                        <p>June 25, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 105 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 6: Sunnyhill Festival -->
+            <div class="event-card" data-weekday="saturday" data-event-type="festival" data-category="other">
+                <img src="~/images/sunnyhill.jpg" alt="Sunnyhill Festival" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Sunnyhill Festival</h3>
+                        <span class="price">90€</span>
+                    </div>
+                    <p>Albania's premier summer festival.</p>
+                    <div class="event-info">
+                        <p>August 5, 2025</p>
+                        <p>Vlore, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 106 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 7: Ballet on Ice -->
+            <div class="event-card" data-weekday="sunday" data-event-type="other" data-category="other">
+                <img src="~/images/ballet.jpg" alt="Ballet on Ice" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Ballet on Ice</h3>
+                        <span class="price">40€</span>
+                    </div>
+                    <p>A magical evening of ballet performed on ice.</p>
+                    <div class="event-info">
+                        <p>July 15, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 107 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 8: Albanian MET -->
+            <div class="event-card" data-weekday="tuesday" data-event-type="other" data-category="other">
+                <img src="~/images/met.jpg" alt="Albanian MET" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Albanian MET</h3>
+                        <span class="price">35€</span>
+                    </div>
+                    <p>Cultural exhibition showcasing Albanian heritage.</p>
+                    <div class="event-info">
+                        <p>June 30, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 108 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 9: Mahmut Orhan -->
+            <div class="event-card" data-weekday="friday" data-event-type="party" data-category="afro">
+                <img src="~/images/mahmut-orhan.jpg" alt="Mahmut Orhan" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Mahmut Orhan</h3>
+                        <span class="price">55€</span>
+                    </div>
+                    <p>Experience the unique blend of electronic and Turkish music.</p>
+                    <div class="event-info">
+                        <p>July 28, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 109 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 10: Martin Garrix -->
+            <div class="event-card" data-weekday="saturday" data-event-type="concert" data-category="techno">
+                <img src="~/images/martin-garrix.jpg" alt="Martin Garrix" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Martin Garrix</h3>
+                        <span class="price">85€</span>
+                    </div>
+                    <p>World-renowned DJ performing live in Tirana.</p>
+                    <div class="event-info">
+                        <p>August 15, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 110 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 11: Dua Lipa -->
+            <div class="event-card" data-weekday="friday" data-event-type="concert" data-category="pop">
+                <img src="~/images/dua-lipa.jpg" alt="Dua Lipa" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Dua Lipa</h3>
+                        <span class="price">95€</span>
+                    </div>
+                    <p>Global pop sensation returns to her roots.</p>
+                    <div class="event-info">
+                        <p>September 1, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 111 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event 12: PINT Albanians -->
+            <div class="event-card" data-weekday="thursday" data-event-type="concert" data-category="albanian">
+                <img src="~/images/pint.jpg" alt="PINT Albanians" onerror="this.onerror=null;this.src='~/images/event-default.jpg';">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>PINT Albanians</h3>
+                        <span class="price">40€</span>
+                    </div>
+                    <p>Celebrating Albanian music and culture.</p>
+                    <div class="event-info">
+                        <p>July 10, 2025</p>
+                        <p>Tirana, Albania</p>
+                    </div>
+                    <a href="@Url.Action("Details", "Events", new { id = 112 })" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="text-center mt-5">
+            <button class="btn-load-more">Load More</button>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="site-footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Logo and Description -->
+            <div class="footer-brand">
+                <h3><i class="fas fa-ticket-alt"></i> Eventick</h3>
+                <p>Eventick is a global self-service ticketing platform for live experiences that allows anyone to create, share, find and attend events that fuel their passions and enrich their lives.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Plan Events -->
+            <div class="footer-links">
+                <h4>Plan Events</h4>
+                <ul>
+                    <li><a href="#">Create and Set Up</a></li>
+                    <li><a href="#">Sell Tickets</a></li>
+                    <li><a href="#">Online RSVP</a></li>
+                    <li><a href="#">Online Events</a></li>
+                </ul>
+            </div>
+
+            <!-- Eventick Links -->
+            <div class="footer-links">
+                <h4>Eventick</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+
+            <!-- Stay In The Loop -->
+            <div class="footer-newsletter">
+                <h4>Stay In The Loop</h4>
+                <p>Join our mailing list to stay updated with our newest events and special offers</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email address..">
+                    <button type="button" class="btn-subscribe">Subscribe Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © @DateTime.Now.Year Eventick. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

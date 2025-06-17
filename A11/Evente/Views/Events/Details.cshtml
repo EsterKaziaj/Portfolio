@@ -1,0 +1,137 @@
+﻿@model Evente.Models.Event
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="details-hero-section">
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-ticket-alt"></i> Eventick
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/Events" class="active">Events</a>
+                <a href="/#about">About Us</a>
+                <a href="/#footer">Contact</a>
+                <div class="auth-buttons">
+                    <a href="/Identity/Account/Login" class="login-btn">Login</a>
+                    <a href="/Identity/Account/Register" class="signup-btn">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<section class="event-details-section">
+    <div class="container">
+        <div class="event-details-container">
+            
+
+            <div class="event-details-content">
+                <div class="event-details-header">
+                    <h1>@Model.Name</h1>
+                    <span class="price">@Model.TicketPrice.ToString("C0")</span>
+                </div>
+
+                <div class="event-details-info">
+                    <div class="event-info-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>@Model.Date.ToString("dddd, MMMM d, yyyy")</span>
+                    </div>
+
+                    <div class="event-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>@Model.Location</span>
+                    </div>
+
+                    <div class="event-info-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>@Model.AvailableSeats seats available</span>
+                    </div>
+                </div>
+
+                <div class="event-details-description">
+                    <h3>Event Description</h3>
+                    <p>@Model.Description</p>
+                </div>
+
+                <!-- Ticket Reservation Form -->
+                <div class="ticket-reservation-form" id="reservation-form">
+                    <h3>Reserve Your Ticket</h3>
+                    <p>Enter your email to reserve a ticket for this event:</p>
+
+                    <div class="form-group">
+                        <input type="email" id="reservation-email" placeholder="Your Email Address" required>
+                    </div>
+
+                    <button type="button" id="reserve-ticket-btn" class="btn-reserve-ticket">Reserve Ticket</button>
+                </div>
+
+                <!-- Confirmation Message (Hidden by default) -->
+                <div class="reservation-confirmation" id="reservation-confirmation" style="display: none;">
+                    <div class="confirmation-content">
+                        <i class="fas fa-check-circle" style="color: green; font-size: 3rem;"></i>
+                        <h3>BILETA U REZERVUA ME SUKSES</h3>
+                        <p>MUND TA BLINI PRANE STENDES TONE.</p>
+                        <p class="confirmation-email">A confirmation email has been sent to <span id="confirmation-email-address"></span></p>
+                        <a href="/Events" class="btn-back-to-events">Back to Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3><i class="fas fa-ticket-alt"></i> Eventick</h3>
+                <p>Eventick is a global self-service ticketing platform for live experiences.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Eventick</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Eventick</p>
+        </div>
+    </div>
+</footer>
+
+@section Scripts {
+    <script>
+        document.getElementById('reserve-ticket-btn').addEventListener('click', function () {
+            var emailInput = document.getElementById('reservation-email');
+            var email = emailInput.value.trim();
+
+            if (!email) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Hide the reservation form
+            document.getElementById('reservation-form').style.display = 'none';
+
+            // Show the confirmation section
+            document.getElementById('reservation-confirmation').style.display = 'block';
+
+            // Display the entered email in the confirmation message
+            document.getElementById('confirmation-email-address').textContent = email;
+        });
+    </script>
+}

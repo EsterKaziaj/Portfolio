@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>aspnet-Evente-9baf7602-3e1d-4c1f-b474-710995cf1bca</UserSecretsId>
+		<!-- Add these properties to fix static web assets issues -->
+		<StaticWebAssetFailOnError>false</StaticWebAssetFailOnError>
+		<GenerateStaticWebAssetsManifest>false</GenerateStaticWebAssetsManifest>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="Views\NewFolder\**" />
+		<Compile Remove="wwwroot\NewFolder1\**" />
+		<Compile Remove="wwwroot\NewFolder2\**" />
+		<Compile Remove="wwwroot\NewFolder\**" />
+		<Content Remove="Views\NewFolder\**" />
+		<Content Remove="wwwroot\NewFolder1\**" />
+		<Content Remove="wwwroot\NewFolder2\**" />
+		<Content Remove="wwwroot\NewFolder\**" />
+		<EmbeddedResource Remove="Views\NewFolder\**" />
+		<EmbeddedResource Remove="wwwroot\NewFolder1\**" />
+		<EmbeddedResource Remove="wwwroot\NewFolder2\**" />
+		<EmbeddedResource Remove="wwwroot\NewFolder\**" />
+		<None Remove="Views\NewFolder\**" />
+		<None Remove="wwwroot\NewFolder1\**" />
+		<None Remove="wwwroot\NewFolder2\**" />
+		<None Remove="wwwroot\NewFolder\**" />
+	</ItemGroup>
+	<!-- Add this section to exclude problematic targets files -->
+	<ItemGroup>
+		<Content Remove="**\*.targets" />
+		<None Remove="**\*.targets" />
+		<Compile Remove="**\*.targets" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.33" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.35" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.35" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.35" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.35" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.35">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
+	</ItemGroup>
+</Project>

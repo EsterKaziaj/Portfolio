@@ -1,0 +1,224 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Hero Section with Navigation -->
+<div class="hero-section">
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-ticket-alt"></i> Eventick
+            </a>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/Events">Events</a>
+                <a href="#about">About Us</a>
+                <a href="#footer">Contact</a>
+                <div class="auth-buttons">
+                    <a href="/Identity/Account/Login" class="login-btn">Login</a>
+                    <a href="/Identity/Account/Register" class="signup-btn">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="~/images/coldplay.jpg" alt="Coldplay Live Concert">
+            </div>
+            <div class="hero-text">
+                <h1>Coldplay Live Concert</h1>
+                <p>Join Coldplay for a magical night of music and emotion as they perform live on their world tour.</p>
+                <div class="hero-buttons">
+                    <a href="/Events" class="btn-get-ticket">Get Ticket</a>
+                    <a href="/Events" class="btn-learn-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Upcoming Events Section -->
+<section class="events-section" id="events">
+    <div class="container">
+        <div class="section-header">
+            <h2>Upcoming Events</h2>
+            <div class="filter-group">
+                <div class="custom-select">
+                    <select id="weekdays">
+                        <option value="">Weekdays</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="custom-select">
+                    <select id="eventType">
+                        <option value="">Event Type</option>
+                        <option value="party">Party</option>
+                        <option value="cinema">Cinema</option>
+                        <option value="concert">Concert</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="custom-select">
+                    <select id="category">
+                        <option value="">Any Category</option>
+                        <option value="afro">Afro House</option>
+                        <option value="techno">Techno</option>
+                        <option value="albanian">Albanian Music</option>
+                        <option value="rock">Rock</option>
+                        <option value="other">Other Events</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="events-grid">
+            <!-- These are the corrected event cards with proper data attributes -->
+            <!-- Event Card 1 -->
+            <div class="event-card" data-weekday="saturday" data-event-type="concert" data-category="afro">
+                <img src="~/images/summer-festival.jpg" alt="Summer Music Festival">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Summer Music Festival</h3>
+                        <span class="price">50€</span>
+                    </div>
+                    <p>Join us for an amazing weekend of music and fun!</p>
+                    <div class="event-info">
+                        <p>June 15, 2025</p>
+                        <p>Riverside Park</p>
+                    </div>
+                    <a href="/Events" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="event-card" data-weekday="friday" data-event-type="party" data-category="techno">
+                <img src="~/images/martin-garrix.jpg" alt="Martin Garrix Live Concert">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Martin Garrix Live Concert</h3>
+                        <span class="price">100€</span>
+                    </div>
+                    <p>Experience an electrifying night!</p>
+                    <div class="event-info">
+                        <p>July 7, 2025</p>
+                        <p>Johan Cruijff Arena</p>
+                    </div>
+                    <a href="/Events" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+
+            <!-- Event Card 3 -->
+            <div class="event-card" data-weekday="wednesday" data-event-type="concert" data-category="rock">
+                <img src="~/images/coldplay-concert.jpg" alt="Coldplay Live Concert">
+                <div class="event-content">
+                    <div class="event-header">
+                        <h3>Coldplay Live Concert</h3>
+                        <span class="price">100€</span>
+                    </div>
+                    <p>Join Coldplay for a magical night of music!</p>
+                    <div class="event-info">
+                        <p>May 12, 2025</p>
+                        <p>Wembley Stadium</p>
+                    </div>
+                    <a href="/Events" class="btn-buy-ticket">Buy Ticket</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <button class="btn-load-more">Load More</button>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-images">
+                <img src="~/images/about-1.jpg" alt="Event venue">
+                <img src="~/images/about-2.jpg" alt="Concert crowd">
+            </div>
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Eventick is your premier destination for discovering and purchasing tickets to the most exciting events in your area. Our platform connects event organizers with attendees, making the ticket purchasing process simple and secure.</p>
+                <p>Founded in 2022, we've helped millions of people create memorable experiences by attending concerts, sports events, conferences, and more.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Logo and Description -->
+            <div class="footer-brand">
+                <h3><i class="fas fa-ticket-alt"></i> Eventick</h3>
+                <p>Eventick is a global self-service ticketing platform for live experiences that allows anyone to share, find and attend events that fuel their passions and enrich their lives.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Plan Events -->
+            <div class="footer-links">
+                <h4>Plan Events</h4>
+                <ul>
+                    <li><a href="#">Create and Set Up</a></li>
+                    <li><a href="#">Sell Tickets</a></li>
+                    <li><a href="#">Online RSVP</a></li>
+                    <li><a href="#">Online Events</a></li>
+                </ul>
+            </div>
+
+            <!-- Eventick Links -->
+            <div class="footer-links">
+                <h4>Eventick</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+
+            <!-- Stay In The Loop -->
+            <div class="footer-newsletter">
+                <h4>Stay In The Loop</h4>
+                <p>Join our mailing list to stay in the loop with our newest for Event and concert</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your email address..">
+                    <button type="button" class="btn-subscribe">Subscribe Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Eventick </p>
+        </div>
+    </div>
+</footer>
+
+@section Scripts {
+    <!-- All JS is now in site.js -->
+}

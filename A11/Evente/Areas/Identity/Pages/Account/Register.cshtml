@@ -1,0 +1,312 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #e53e3e 0%, #9f7aea 100%);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .registration-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .registration-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        padding: 3rem;
+        width: 100%;
+        max-width: 1000px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .page-title {
+        text-align: center;
+        color: #2d3748;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #e53e3e, #9f7aea);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .form-section {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+        .form-section h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+    .form-floating {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+        .form-floating input {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(159, 122, 234, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+            .form-floating input:focus {
+                outline: none;
+                border-color: #9f7aea;
+                box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.1);
+                transform: translateY(-2px);
+            }
+
+        .form-floating label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            color: #718096;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0 0.5rem;
+        }
+
+        .form-floating input:focus + label,
+        .form-floating input:not(:placeholder-shown) + label {
+            top: 0;
+            transform: translateY(-50%);
+            font-size: 0.85rem;
+            color: #9f7aea;
+            font-weight: 500;
+        }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #e53e3e, #9f7aea);
+        border: none;
+        border-radius: 12px;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(159, 122, 234, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(159, 122, 234, 0.4);
+            background: linear-gradient(135deg, #c53030, #805ad5);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+    .external-login-section {
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+        .external-login-section h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .external-login-section .btn {
+            margin: 0.5rem;
+            border-radius: 10px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+            .external-login-section .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+
+    .text-danger {
+        color: #e53e3e !important;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        font-weight: 500;
+    }
+
+    .validation-summary {
+        background: rgba(229, 62, 62, 0.1);
+        border: 1px solid rgba(229, 62, 62, 0.3);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(135deg, rgba(229, 62, 62, 0.3), rgba(159, 122, 234, 0.3));
+        margin: 1.5rem 0;
+        border-radius: 1px;
+    }
+
+    .external-info {
+        background: rgba(159, 122, 234, 0.1);
+        border: 1px solid rgba(159, 122, 234, 0.2);
+        border-radius: 10px;
+        padding: 1rem;
+        color: #553c9a;
+    }
+
+        .external-info a {
+            color: #9f7aea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            .external-info a:hover {
+                text-decoration: underline;
+            }
+
+    @@media (max-width: 768px) {
+        .registration-card {
+            padding: 2rem 1.5rem;
+            margin: 1rem;
+        }
+
+        .page-title {
+            font-size: 2rem;
+        }
+
+        .row {
+            flex-direction: column;
+        }
+
+        .col-md-4, .col-md-6 {
+            margin-bottom: 2rem;
+        }
+    }
+
+    /* Animation for form appearance */
+    .form-section, .external-login-section {
+        animation: slideUp 0.6s ease-out;
+    }
+
+    @@keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<div class="registration-container">
+    <div class="registration-card">
+        <h1 class="page-title">@ViewData["Title"]</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-section">
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <h2>Create a new account.</h2>
+                        <hr />
+                        <div asp-validation-summary="ModelOnly" class="text-danger validation-summary"></div>
+
+                        <div class="form-floating">
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder=" " />
+                            <label asp-for="Input.Email"></label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating">
+                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder=" " />
+                            <label asp-for="Input.Password"></label>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating">
+                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder=" " />
+                            <label asp-for="Input.ConfirmPassword"></label>
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-md-offset-2">
+                <div class="external-login-section">
+                    <section>
+                        <h3>Use another service to register.</h3>
+                        <hr />
+                        @{
+                            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                            {
+                                <div class="external-info">
+                                    <p>
+                                        There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                            article
+                                            about setting up this ASP.NET application to support logging in via external services
+                                        </a>.
+                                    </p>
+                                </div>
+                            }
+                            else
+                            {
+                                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                                    <div>
+                                        <p>
+                                            @foreach (var provider in Model.ExternalLogins!)
+                                            {
+                                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                            }
+                                        </p>
+                                    </div>
+                                </form>
+                            }
+                        }
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

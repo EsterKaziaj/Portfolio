@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Evente.Models.UserViewModel>
+
+<h1 class="page-title">Menaxhimi i perdoruesve</h1>
+
+<table class="table user-table">
+    <thead>
+        <tr>
+            <th>Emri</th>
+            <th>Email</th>
+            <th>Roli</th>
+            <th>Veprime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+
+        {
+            <tr>
+                <td colspan="4" class="text-center">Nuk ka llogari Perdoruesish</td>
+            </tr>
+        }
+
+        else
+
+        {
+            @foreach (var user in Model)
+
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role</td>
+                    <td class="text-center">
+                        <a class="btn btn-sm btn-primary action-button" asp-controller="Admin" asp-route-id="@user.Id" asp-action="Create">Shto Rol</a>
+                        <a class="btn btn-sm btn-warning action-button" asp-controller="Admin" asp-route-id="@user.Id" asp-action="ShowEdit">Modifiko</a>
+                        <form method="post" asp-controller="Admin" asp-action="Delete" asp-route-id="@user.Id" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-danger action-button">Fshi</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Role" class="btn btn-primary manage-role-button" asp-action="Index">Menaxhimi i Roleve</a>
+
