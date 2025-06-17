@@ -1,0 +1,95 @@
+﻿@model IEnumerable<IGrouping<string, CarRentalSystem.Models.Car>>
+
+<div class="container py-5">
+    @foreach (var carClassGroup in Model)
+    {
+        <div class="mb-5">
+            <h3 class="text-center py-2" style="background-color: #1A1A40; color: white;">@carClassGroup.Key</h3>
+            <div class="row g-4">
+                @foreach (var car in carClassGroup)
+                {
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <img src="@car.ImagePath" class="card-img-top car-image" alt="@car.Name">
+                            <div class="card-body">
+                                <h5 class="card-title">@car.Name</h5>
+                                <ul class="list-unstyled mb-3">
+                                    <li><strong>Fuel:</strong> @car.FuelType</li>
+                                    <li><strong>Gearbox:</strong> @car.Gearbox</li>
+                                    <li><strong>Fuel Usage:</strong> @car.FuelUsage L/100km</li>
+                                    <li><strong>Price:</strong> €@car.PricePerDay/day</li>
+                                </ul>
+                                <a href="@Url.Action("Rent", "User", new { id = car.Id })" class="btn btn-orange w-100">Rent Now</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    /* Header for car classes */
+    h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Card styling */
+    .card {
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+    /* Image styling */
+    .car-image {
+        height: 200px; /* Fixed height for uniformity */
+        width: 100%; /* Full width */
+        object-fit: cover; /* Ensures the image scales without distortion */
+        border-bottom: 3px solid #FFA500; /* Orange border below image */
+    }
+
+    /* Card body */
+    .card-body {
+        background-color: #f8f9fa; /* Light grey */
+        color: #1A1A40; /* Deep blue */
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-weight: bold;
+        color: #1A1A40; /* Deep blue */
+        text-align: center; /* Centered title */
+        margin-bottom: 1rem;
+    }
+
+    /* Rent button styling */
+    .btn-orange {
+        background-color: #FFA500;
+        border: none;
+        color: white;
+    }
+
+        .btn-orange:hover {
+            background-color: #FF8C00; /* Darker orange */
+        }
+
+    /* Container spacing */
+    .container {
+        max-width: 1200px;
+    }
+
+    /* List Styling */
+    .list-unstyled li {
+        padding-bottom: 0.5rem;
+    }
+</style>

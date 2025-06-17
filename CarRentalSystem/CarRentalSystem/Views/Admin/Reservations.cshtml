@@ -1,0 +1,86 @@
+﻿@model IEnumerable<CarRentalSystem.Models.Reservation>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Manage Reservations</h2>
+
+    <div class="table-responsive shadow">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>User</th>
+                    <th>Car</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reservation in Model)
+                {
+                    <tr id="reservation-@reservation.Id">
+                        <td>@reservation.User?.UserName</td>
+                        <td>@reservation.Car?.Name</td>
+                        <td>@reservation.StartDate.ToString("MM/dd/yyyy")</td>
+                        <td>@reservation.EndDate.ToString("MM/dd/yyyy")</td>
+                        <td>
+                            <span class="badge
+                                @(reservation.Status?.Name == "Confirmed" ? "bg-success" :
+                                  reservation.Status?.Name == "Pending" ? "bg-warning text-dark" :
+                                  "bg-danger")" id="status-@reservation.Id">
+                                @reservation.Status?.Name
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-sm change-status" data-id="@reservation.Id">Change Status</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+     $(document).ready(function () {
+        $(".change-status").click(function () {
+            const button = $(this);
+            button.prop("disabled", true).text("Processing...");
+
+            const reservationId = button.data("id");
+            const token = $('input[name="__RequestVerificationToken"]').val();
+
+            $.ajax({
+                url: "/Admin/ChangeReservationStatus",
+                type: "POST",
+                headers: { "RequestVerificationToken": token },
+                data: { id: reservationId },
+                success: function (response) {
+                    button.prop("disabled", false).text("Change Status");
+
+                    if (response.success) {
+                        // Update status dynamically
+                        $(`#status-${reservationId}`).text(response.status);
+
+                        const badge = $(`#status-${reservationId}`);
+                        badge.removeClass("bg-success bg-warning bg-danger");
+
+                        if (response.status === "Confirmed") {
+                            badge.addClass("bg-success");
+                        } else if (response.status === "Pending") {
+                            badge.addClass("bg-warning text-dark");
+                        }
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    button.prop("disabled", false).text("Change Status");
+                    alert("An error occurred. Please try again.");
+                }
+            });
+        });
+    });
+
+</script>
